@@ -1,0 +1,137 @@
+<header>
+  <div class="container">
+    <a href="#top" class="logo">
+      <img src="/img/wooju.jpg">
+      <h1>Woo Ju PROFILE</h1>
+    </a>
+    <ul class="nav">
+      <li>
+        <a href="#about">ABOUT ME</a>
+      </li>
+      <li>
+        <a href="#favorite">FAVORITE</a>
+      </li>
+      <li>
+        <a href="#contact">CONTACT</a>
+      </li>
+    </ul>
+  </div>
+</header>
+<div id="top">
+  <img src="/img/wooju.jpg">
+  <h1 class="title">Woo Ju</h1>
+  <h3 class="sub-title">Student of SNU</h3>
+</div>
+<div id="about">
+  <div class="about-img">
+  </div>
+  <div class="about-contents">
+    <div class="inner">
+      <h1>innovator</h1>
+      <h1 class="title">Woo Ju</h1>
+      <h3 class="sub-title">Major in Computer Science and Engineering</h3>
+      <h4>
+        <ul>
+          <li>Birth 1994.07.21</li>
+          <li>Hatap Elementary School 2001~2007</li>
+          <li>Imae Middle School 2007~2010</li>
+          <li>Imae High School 2010~2013</li>
+          <li>Seoul National University 2013~</li>
+          <li>Soccer301 2013~</li>
+          <li>Intern of Database System Lab 2015~</li>
+        </ul>
+      </h4>
+    </div>
+  </div>
+</div>
+<div id="favorite">
+  <div class="inner">
+    <h1 class="title">Favorite</h1>
+    <h3 class="sub-title">My Favorite Things</h3>
+    <div class="favorite-contents">
+      <div class="img-hover">
+        <img src="/img/soccer2.jpg">
+        <h1>100</h1>
+      </div>
+      <h3>SOCCER</h3>
+    </div>
+    <div class="favorite-contents">
+      <div class="img-hover">
+        <img src="/img/fa/02.jpg">
+        <h1>100</h1>
+      </div>
+      <h3>BOOK</h3>
+    </div>
+    <div class="favorite-contents">
+      <div class="img-hover">
+        <img src="/img/music.jpg">
+        <h1>100</h1>
+      </div>
+      <h3>MUSIC</h3>
+    </div>
+    <div class="favorite-contents">
+      <div class="img-hover">
+        <img src="/img/movie2.png">
+        <h1>100</h1>
+      </div>
+      <h3>MOVIE</h3>
+    </div>
+  </div>
+</div>
+<div id="contact">
+  <div class="inner">
+    <h1 class="title">GET IN TOUCH!</h1>
+    <div class="input-form">
+      <%= form_tag("/write", method: "post") do %>
+      <input type="text" name="name" placeholder="Name">
+      <input type="text" name="message" placeholder="Message">
+      <button>SEND MESSAGE</button>
+      <% end %>
+    </div>
+    <% @comments.each do |comment| %>
+    <div class="comment">
+      <img src="/img/guest.png">
+      <h1>
+        <%= comment.name %>
+        <span><%= comment.created_at.localtime.strftime("%I:%M %p - %B %e, %Y") %></span>
+      </h1>
+      <p>
+        <%= comment.content %>
+      </p>
+    </div>
+    <% end %>
+  </div>
+</div>
+<footer>
+  <ul class="sns">
+    <a href="#">
+      <li class="facebook">
+        <img src="/img/sns-facebook.png">
+      </li>
+    </a>
+    <a href="#">
+      <li class="instargram">
+        <img src="/img/sns-instargram.png">
+      </li>
+    </a>
+    <a href="#">
+      <li class="pinterest">
+        <img src="/img/sns-pinterest.png">
+      </li>
+    </a>
+    <a href="#">
+      <li class="twitter">
+        <img src="/img/sns-twitter.png">
+      </li>
+    </a>
+    <a href="#">
+      <li class="youtube">
+        <img src="/img/sns-youtube.png">
+      </li>
+    </a>
+  </ul>
+  <h3>Copyright &copy; 2015 TOYCODE</h3>
+</footer>
+<a href="#top" class="top-btn">
+  <img src="/img/top.png">
+</a>
